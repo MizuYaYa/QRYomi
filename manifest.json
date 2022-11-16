@@ -6,6 +6,6 @@
 	"action": {
         "default_title": "QRヨミ",
         "default_icon": "./icon.png",
-        "default_popup": "./popup.html"
+        "default_popup": "./index.html"
     }
 }
