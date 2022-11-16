@@ -55,7 +55,7 @@ function startQR() {
 re_btn.addEventListener("click", () => {
 	link_btn.removeAttribute("href");
 	link_btn.classList.remove("link_btn");
-	re_btn_css.style.display = "none";
+	re_btn_css.style.visibility = "hidden";
 	console.log("QRの読み込みを再開します。\nRestart reading QR.");
 	startQR();
 });
@@ -79,7 +79,7 @@ function urlOpen() {
 		//リンクのボタンのアニメーションができるように
 		link_btn.classList.add("link_btn");
 		//もう一度検出する用のボタン出現
-		re_btn_css.style.display = "block";
+		re_btn_css.style.visibility = "visible";
 	}else if(RegExp("^http").test(QR.data)){
 		console.log("httpのurlを検出しました。\nDetected http url.");
 		//一応念のためhttpのURLの際は警告を出す
@@ -89,13 +89,13 @@ function urlOpen() {
 		message.style.cssText = "background-color: #fc0; box-shadow: 1px 1px 2px red; border: 1px solid red;";
 		link_btn.setAttribute("href", QR.data);
 		link_btn.classList.add("link_btn");
-		re_btn_css.style.display = "block";
+		re_btn_css.style.visibility = "visible";
 	}else if(QR.data == false){
 		console.log("誤検出が発生\nFalse positives occur");
 		startQR();
 	}else{
 		console.log("URL以外の文字列を検出しました。\nDetected a string other than url.")
-		re_btn_css.style.display = "block";
+		re_btn_css.style.visibility = "visible";
 	}
 }
 
