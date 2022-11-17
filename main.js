@@ -26,7 +26,8 @@ navigator.mediaDevices.getUserMedia(
 	}).catch(e => {
 		//カメラの権限が取得できなかったらこっち
 		console.log(`カメラへのアクセスがブロックされました。\nCamera access blocked.\n${e}`);
-		console.log("どうしようもありません。\nThere is nothing we can do about it.")
+		console.log("どうしようもありません。\nThere is nothing we can do about it.");
+		message_info.innerText = "カメラにアクセスできません";
 	});
 
 function startQR() {
@@ -61,7 +62,7 @@ re_btn.addEventListener("click", () => {
 });
 
 copy_btn.addEventListener("click", () => {
-	console.log("copy_button_click")
+	console.log("copy_button_click");
 	if(QR.data){
 		navigator.clipboard.writeText(QR.data);
 		console.log("コピーしました。\nCopied");
@@ -94,7 +95,7 @@ function urlOpen() {
 		console.log("誤検出が発生\nFalse positives occur");
 		startQR();
 	}else{
-		console.log("URL以外の文字列を検出しました。\nDetected a string other than url.")
+		console.log("URL以外の文字列を検出しました。\nDetected a string other than url.");
 		re_btn_css.style.visibility = "visible";
 	}
 }
