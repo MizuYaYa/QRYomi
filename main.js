@@ -39,18 +39,55 @@ function startQR() {
 		QR = jsQR(img.data, img.width, img.height, {inversionAttempts: "dontInvert"});
 		//QRを認識できたら
 		if(QR){
-			//認識したQRの外枠に線を引く
-			drawRect(QR.location);
-			message_info.innerText = QR.data;
-			console.log(new TextDecoder("shift-jis").decode(Uint8Array.from(QR.binaryData).buffer))
-			console.log(`QRを検出しました\nQR detected.\nQRdata:"${QR.data}"`)
-			urlOpen();
+			console.log(QR);
+			const decode_QRData = new TextDecoder("shift-jis").decode(Uint8Array.from(QR.binaryData).buffer);
+			//UTF-8
+			if (QR.data) {
+				//認識したQRの外枠に線を引く
+				drawRect(QR.location);
+				//メッセージに取得したurlに変える
+				message_info.innerText = QR.data;
+				console.log(`QRを検出しました\nQR detected.\nUTF-8_QRdata:"${QR.data}"`);
+				urlOpen(QR.data);
+			//shift-jis
+			}else if (decode_QRData) {
+				//認識したQRの外枠に線を引く
+				drawRect(QR.location);
+				message_info.innerText = decode_QRData;
+				console.log(`QRを検出しました\nQR detected.\nshift-jis_QRdata:"${decode_QRData}"`);
+				urlOpen(decode_QRData);
+			}else {
+				console.log("誤検出が発生\nFalse positives occur");
+				startQR();
+			}
 			return;
 		}else{
 			message_info.innerText = "検出中・・・"
 		}
 	}
 	setTimeout(startQR, 1);
+}
+
+function urlOpen(QRData) {
+	//もう一度検出する用のボタン出現
+	re_btn_css.style.visibility = "visible";
+	//httpsURLかhttpURLか文字列を正規表現で検出
+	if(RegExp("^https://").test(QRData)) {
+		console.log("httpsのurlを検出しました。\nDetected https url.");
+		//リンクのボタンを検出したURLに置き換え
+		link_btn.setAttribute("href", QRData);
+		//リンクのボタンのアニメーションができるように
+		link_btn.classList.add("link_btn");
+	}else if(RegExp("^http://").test(QRData)) {
+		console.log("httpのurlを検出しました。\nDetected http url.");
+		//一応念のためhttpのURLの際は警告を出す
+		const httpAlert=()=>{alert("保護されていない通信:http");}
+		setTimeout(httpAlert, 300);
+		link_btn.setAttribute("href", QRData);
+		link_btn.classList.add("link_btn");
+	}else {
+		console.log("URL以外の文字列を検出しました。\nDetected a string other than url.");
+	}
 }
 
 re_btn.addEventListener("click", () => {
@@ -69,37 +106,7 @@ copy_btn.addEventListener("click", () => {
 		copy_text.innerText = "コピーしました。";
 		setTimeout(()=>{copy_text.innerText = "";}, 2000);
 	}
-})
-
-function urlOpen() {
-	//httpsURLかhttpURLか文字列を正規表現で検出
-	if(RegExp("^https").test(QR.data)){
-		console.log("httpsのurlを検出しました。\nDetected https url.");
-		//リンクのボタンを検出したURLに置き換え
-		link_btn.setAttribute("href", QR.data);
-		//リンクのボタンのアニメーションができるように
-		link_btn.classList.add("link_btn");
-		//もう一度検出する用のボタン出現
-		re_btn_css.style.visibility = "visible";
-	}else if(RegExp("^http").test(QR.data)){
-		console.log("httpのurlを検出しました。\nDetected http url.");
-		//一応念のためhttpのURLの際は警告を出す
-		const httpAlert=()=>{alert("保護されていない通信:http");}
-		setTimeout(httpAlert, 300)
-		//info_messageの色を変更...後で変更しといて
-		message.style.cssText = "background-color: #fc0; box-shadow: 1px 1px 2px red; border: 1px solid red;";
-		link_btn.setAttribute("href", QR.data);
-		link_btn.classList.add("link_btn");
-		re_btn_css.style.visibility = "visible";
-	}else if(QR.data == false){
-		console.log("誤検出が発生\nFalse positives occur");
-		startQR();
-	}else{
-		console.log("URL以外の文字列を検出しました。\nDetected a string other than url.");
-		re_btn_css.style.visibility = "visible";
-	}
-}
-
+});
 
 //検出したQRコードに枠を作る
 function drawRect(location){
