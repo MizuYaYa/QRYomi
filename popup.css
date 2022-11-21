@@ -37,10 +37,11 @@
   border:1px solid whitesmoke;
   font-size:20px;
   border-radius:10px;
-  -webkit-border-radius:10px;
-  -moz-border-radius:10px;
-  transition: all 0.1s ease;
+  transition: all 0.2s ease;
   box-shadow: gray 2px 3px 3px;
+  text-decoration: none;
+  color: black;
+  user-select: none;
 }
 #link_btn:hover {
   border: 1px solid #000000;
