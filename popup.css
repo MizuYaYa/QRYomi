@@ -1,56 +1,66 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.header h1 {
+  margin: 0;
+}
+.header span {
+  vertical-align: middle;
+  display: inline-flex;
+}
+
 #canvas {
   border: 2px solid black;
   text-align: center;
   width: 300px;
   border-radius: 7px;
-  transform: rotateY(180deg);-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);-ms-transform:rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
-#re_btn_div {
-  margin-top: -35px;
-  margin-bottom: 15px;
-  text-align: center;
-  visibility: hidden;
-}
-
-#re_btn {
+#scan_restart_btn {
+  display: block;
   background-color: white;
   padding: 3px;
   border: 0;
+  margin: -35px auto 15px;
+  text-align: center;
+  visibility: hidden;
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 2px 2px 2px grey;
 }
 
 .main button {
-    text-align: right;
-    position: relative;
+  text-align: right;
+  position: relative;
 }
 
-#link_btn {
+.link_btn {
   display: block;
   cursor: pointer;
   width:220px;
   height:50px;
   line-height:50px;
   text-align:center;
-  border:1px solid whitesmoke;
+  border:1px solid #ccc;
   font-size:20px;
-  border-radius:10px;
+  border-radius:7px;
   transition: all 0.2s ease;
-  box-shadow: gray 2px 3px 3px;
+  box-shadow: 2px 3px 3px #ccc;
   text-decoration: none;
   color: black;
   user-select: none;
 }
-.link_btn:hover {
-  border: 1px solid #000000;
+.link_btn-enabled:hover {
+  border: 2px solid gray;
 }
-.link_btn:active {
+.link_btn-enabled:active {
   box-shadow: gray 1px 2px 3px inset;
 }
 
-#message {
+.content_box {
   margin: 10px 0;
   padding: 5px;
   border: 1px solid #ccc; /* 枠線 */
@@ -63,11 +73,21 @@
   user-select: none;
 }
 
-#message_info {
+#scan_content {
   margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.status_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#cam_status {
+  font-size: 15px;
+  margin: 0;
 }
 
 .copy {
