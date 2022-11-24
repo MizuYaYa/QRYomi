@@ -1,3 +1,9 @@
+:root {
+  --main-text-color: black;
+  --main-bg-color: white;
+  --sub-color: #ccc;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -12,24 +18,29 @@
 }
 
 #canvas {
-  border: 2px solid black;
-  text-align: center;
+  border: 2px solid var(--sub-color);
   width: 300px;
   border-radius: 7px;
   transform: rotateY(180deg);
 }
 
-#scan_restart_btn {
+.btn {
   display: block;
-  background-color: white;
-  padding: 3px;
-  border: 0;
-  margin: -35px auto 15px;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+  border: 1px solid var(--sub-color);
   text-align: center;
+  text-decoration: none;
+  user-select: none;
+}
+
+#scan_restart_btn {
+  padding: 3px;
+  margin: -35px auto 15px;
   visibility: hidden;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: 2px 2px 2px grey;
+  box-shadow: 2px 2px 2px var(--sub-color);
 }
 
 .main button {
@@ -38,33 +49,26 @@
 }
 
 .link_btn {
-  display: block;
-  cursor: pointer;
   width:220px;
   height:50px;
   line-height:50px;
-  text-align:center;
-  border:1px solid #ccc;
   font-size:20px;
   border-radius:7px;
   transition: all 0.2s ease;
-  box-shadow: 2px 3px 3px #ccc;
-  text-decoration: none;
-  color: black;
-  user-select: none;
+  box-shadow: 2px 3px 3px var(--sub-color);
 }
 .link_btn-enabled:hover {
-  border: 2px solid gray;
+  border: 1px solid gray;
 }
 .link_btn-enabled:active {
-  box-shadow: gray 1px 2px 3px inset;
+  box-shadow: inset 1px 2px 3px var(--sub-color);
 }
 
 .content_box {
   margin: 10px 0;
   padding: 5px;
-  border: 1px solid #ccc; /* 枠線 */
-  background-color: #fff; /* 背景色 */
+  border: 1px solid #ccc;
+  background-color: #fff;
   box-shadow: 1px 1px 2px #ccc;
   border-radius: 5px;
   overflow: hidden;
