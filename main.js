@@ -1,12 +1,11 @@
-//分かりづらい変数名
+
 const video = document.createElement("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d", { willReadFrequently: true});
-const message_info = document.getElementById("message_info");
-const message = document.getElementById("message");
+const scan_content = document.getElementById("scan_content");
 const link_btn = document.getElementById("link_btn");
-const re_btn = document.getElementById("re_btn");
-const re_btn_css = document.getElementById("re_btn_div");
+const scan_restart_btn = document.getElementById("scan_restart_btn");
+const cam_status = document.getElementById("cam_status");
 const copy_btn = document.getElementById("copy_btn");
 const copy_text = document.getElementById("copy_text");
 let QR;
@@ -21,13 +20,14 @@ navigator.mediaDevices.getUserMedia(
 		video.play();
 		console.log("QRの読み込みを開始します。\nStart reading QR.");
 		//QRを読み込む
-		message_info.innerText = "カメラを起動中です・・・";
+		cam_status.innerText = "カメラを起動中です・・・";
 		startQR();
 	}).catch(e => {
 		//カメラの権限が取得できなかったらこっち
 		console.log(`カメラへのアクセスがブロックされました。\nCamera access blocked.\n${e}`);
 		console.log("どうしようもありません。\nThere is nothing we can do about it.");
-		message_info.innerText = "カメラにアクセスできません";
+		cam_status.innerText = "カメラにアクセスできません";
+		window.open("./permissions.html", null);
 	});
 
 function startQR() {
@@ -39,6 +39,7 @@ function startQR() {
 		QR = jsQR(img.data, img.width, img.height, {inversionAttempts: "dontInvert"});
 		//QRを認識できたら
 		if(QR){
+			//読み込んだQRの内容
 			console.log(QR);
 			const decode_QRData = new TextDecoder("shift-jis").decode(Uint8Array.from(QR.binaryData).buffer);
 			//UTF-8
@@ -46,14 +47,14 @@ function startQR() {
 				//認識したQRの外枠に線を引く
 				drawRect(QR.location);
 				//メッセージに取得したurlに変える
-				message_info.innerText = QR.data;
+				scan_content.innerText = QR.data;
 				console.log(`QRを検出しました\nQR detected.\nUTF-8_QRdata:"${QR.data}"`);
 				urlOpen(QR.data);
 			//shift-jis
 			}else if (decode_QRData) {
 				//認識したQRの外枠に線を引く
 				drawRect(QR.location);
-				message_info.innerText = decode_QRData;
+				scan_content.innerText = decode_QRData;
 				console.log(`QRを検出しました\nQR detected.\nshift-jis_QRdata:"${decode_QRData}"`);
 				urlOpen(decode_QRData);
 			}else {
@@ -62,7 +63,7 @@ function startQR() {
 			}
 			return;
 		}else{
-			message_info.innerText = "検出中・・・"
+			cam_status.innerText = "検出中・・・"
 		}
 	}
 	setTimeout(startQR, 1);
@@ -70,36 +71,35 @@ function startQR() {
 
 function urlOpen(QRData) {
 	//もう一度検出する用のボタン出現
-	re_btn_css.style.visibility = "visible";
+	scan_restart_btn.style.visibility = "visible";
 	//httpsURLかhttpURLか文字列を正規表現で検出
 	if(RegExp("^https://").test(QRData)) {
 		console.log("httpsのurlを検出しました。\nDetected https url.");
 		//リンクのボタンを検出したURLに置き換え
 		link_btn.setAttribute("href", QRData);
 		//リンクのボタンのアニメーションができるように
-		link_btn.classList.add("link_btn");
+		link_btn.classList.add("link_btn-enabled");
 	}else if(RegExp("^http://").test(QRData)) {
 		console.log("httpのurlを検出しました。\nDetected http url.");
 		//一応念のためhttpのURLの際は警告を出す
 		const httpAlert=()=>{alert("保護されていない通信:http");}
 		setTimeout(httpAlert, 300);
 		link_btn.setAttribute("href", QRData);
-		link_btn.classList.add("link_btn");
+		link_btn.classList.add("link_btn-enabled");
 	}else {
 		console.log("URL以外の文字列を検出しました。\nDetected a string other than url.");
 	}
 }
 
-re_btn.addEventListener("click", () => {
+scan_restart_btn.addEventListener("click", () => {
 	link_btn.removeAttribute("href");
-	link_btn.classList.remove("link_btn");
-	re_btn_css.style.visibility = "hidden";
+	link_btn.classList.remove("link_btn-enabled");
+	scan_restart_btn.style.visibility = "hidden";
 	console.log("QRの読み込みを再開します。\nRestart reading QR.");
 	startQR();
 });
 
 copy_btn.addEventListener("click", () => {
-	console.log("copy_button_click");
 	if(QR.data){
 		navigator.clipboard.writeText(QR.data);
 		console.log("コピーしました。\nCopied");
