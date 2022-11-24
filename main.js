@@ -95,6 +95,7 @@ scan_restart_btn.addEventListener("click", () => {
 	link_btn.removeAttribute("href");
 	link_btn.classList.remove("link_btn-enabled");
 	scan_restart_btn.style.visibility = "hidden";
+	scan_content.innerText = "QRコードを読み込ませてください";
 	console.log("QRの読み込みを再開します。\nRestart reading QR.");
 	startQR();
 });
