@@ -1,4 +1,3 @@
-
 const video = document.createElement("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d", { willReadFrequently: true});
@@ -27,7 +26,7 @@ navigator.mediaDevices.getUserMedia(
 		console.log(`カメラへのアクセスがブロックされました。\nCamera access blocked.\n${e}`);
 		console.log("どうしようもありません。\nThere is nothing we can do about it.");
 		cam_status.innerText = "カメラにアクセスできません";
-		window.open("./permissions.html", null);
+		window.open("./permissions.html");
 	});
 
 function startQR() {
@@ -45,16 +44,12 @@ function startQR() {
 			//UTF-8
 			if (QR.data) {
 				//認識したQRの外枠に線を引く
-				drawRect(QR.location);
 				//メッセージに取得したurlに変える
-				scan_content.innerText = QR.data;
 				console.log(`QRを検出しました\nQR detected.\nUTF-8_QRdata:"${QR.data}"`);
 				urlOpen(QR.data);
 			//shift-jis
 			}else if (decode_QRData) {
 				//認識したQRの外枠に線を引く
-				drawRect(QR.location);
-				scan_content.innerText = decode_QRData;
 				console.log(`QRを検出しました\nQR detected.\nshift-jis_QRdata:"${decode_QRData}"`);
 				urlOpen(decode_QRData);
 			}else {
@@ -63,30 +58,36 @@ function startQR() {
 			}
 			return;
 		}else{
-			cam_status.innerText = "検出中・・・"
+			cam_status.innerText = "検出中・・・";
 		}
 	}
 	setTimeout(startQR, 1);
 }
 
 function urlOpen(QRData) {
+	drawRect(QR.location);
 	//もう一度検出する用のボタン出現
 	scan_restart_btn.style.visibility = "visible";
+	scan_content.innerText = QRData;
 	//httpsURLかhttpURLか文字列を正規表現で検出
-	if(RegExp("^https://").test(QRData)) {
+	if (RegExp("^https://").test(QRData)) {
 		console.log("httpsのurlを検出しました。\nDetected https url.");
+		cam_status.innerText = "リンクを検出しました。";
 		//リンクのボタンを検出したURLに置き換え
 		link_btn.setAttribute("href", QRData);
 		//リンクのボタンのアニメーションができるように
 		link_btn.classList.add("link_btn-enabled");
-	}else if(RegExp("^http://").test(QRData)) {
+
+	}else if (RegExp("^http://").test(QRData)) {
 		console.log("httpのurlを検出しました。\nDetected http url.");
+		cam_status.innerText = "httpのリンクを検出しました。";
 		//一応念のためhttpのURLの際は警告を出す
-		const httpAlert=()=>{alert("保護されていない通信:http");}
-		setTimeout(httpAlert, 300);
+		setTimeout(()=>{alert("保護されていない通信:http")}, 300);
 		link_btn.setAttribute("href", QRData);
 		link_btn.classList.add("link_btn-enabled");
+
 	}else {
+		cam_status.innerText = "テキストを検出しました。";
 		console.log("URL以外の文字列を検出しました。\nDetected a string other than url.");
 	}
 }
