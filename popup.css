@@ -97,6 +97,7 @@ body {
 #cam_status {
   font-size: 15px;
   margin: 0;
+  padding: 3px;
 }
 
 .copy {
@@ -112,7 +113,8 @@ body {
   cursor: pointer;
   border: none;
   background-color: transparent;
-  padding: 8px;
+  padding: 4px;
+  transition: .3s;
 }
 #copy_btn:hover {
   background-color: #cccccc80;
