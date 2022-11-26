@@ -1,11 +1,23 @@
 {
-	"name": "QRYomi",
 	"manifest_version": 3,
+	"name": "QRYomi",
 	"version": "0.1.0",
-	"permissions": ["activeTab"],
 	"action": {
+		"default_icon": {
+			"16": "images/icons/QRYomi_icon_16.png",
+			"32": "images/icons/QRYomi_icon_32.png",
+			"48": "images/icons/QRYomi_icon_48.png",
+			"128": "images/icons/QRYomi_icon_128.png"
+		},
         "default_title": "QRYomi",
-        "default_icon": "./QRYomi_icon_new.png",
-        "default_popup": "./index.html"
-    }
+        "default_popup": "index.html"
+    },
+	"description": "QRコード読み取り拡張機能「QRYomi」",
+	"icons": {
+		"16": "images/icons/QRYomi_icon_16.png",
+		"32": "images/icons/QRYomi_icon_32.png",
+		"48": "images/icons/QRYomi_icon_48.png",
+		"128": "images/icons/QRYomi_icon_128.png"
+	},
+	"permissions": ["activeTab"]
 }
