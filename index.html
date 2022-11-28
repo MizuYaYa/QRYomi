@@ -3,21 +3,18 @@
     <head>
         <meta charset="utf-8">
         <title>QRYomi</title>
-        <link rel="icon" href="images/icons/QRYomi_icon.svg">
+        <link rel="icon" href="images/QRYomi_icons/QRYomi_icon.svg">
         <link rel="stylesheet" href="./popup.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
     </head>
     <body style="width: 304px;">
         <header>
-            <div class="header">
-                <div></div>
-                <span class="material-symbols-outlined">settings</span>
-            </div>
             <div class="tab_bar">
 
             </div>
+            <span class="material-symbols-outlined">settings</span>
         </header>
-        <div class="main">
+        <main>
             <div class="cam_video">
                 <canvas id="canvas"></canvas>
                 <button class="btn" id="scan_restart_btn">カメラリスタート</button>
@@ -34,7 +31,7 @@
                 </div>
             </div>
             <a class="link_btn btn" id="link_btn" target="_blank" rel=“noreferrer”>リンクにアクセスする</a>
-        </div>
+        </main>
         <script src="./main.js"></script>
         <script src="./jsQR.js"></script>
     </body>
