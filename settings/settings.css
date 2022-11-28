@@ -7,3 +7,15 @@ html {
     width: 20rem;
     background-image: url("../images/QRYomi_icons/QRYomi_logo.svg");
 }
+
+main {
+    margin: 10rem 0 0 30rem;
+}
+
+.lang h2 {
+    font-size: 3rem;
+}
+.lang ul {
+    list-style-type: none;
+    font-size: 2rem;
+}
