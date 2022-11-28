@@ -9,15 +9,12 @@ body {
   color: var(--main-text-color);
 }
 
-.header {
+header {
   display: flex;
   justify-content: space-between;
   margin: 10px;
 }
-.header h1 {
-  margin: 0;
-}
-.header span {
+header span {
   vertical-align: middle;
   display: inline-flex;
 }
@@ -48,7 +45,7 @@ body {
   box-shadow: 2px 2px 2px #cccccccc;
 }
 
-.main button {
+main button {
   text-align: right;
   position: relative;
 }
