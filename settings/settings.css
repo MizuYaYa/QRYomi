@@ -1,0 +1,9 @@
+html {
+    font-size: 62.5%;
+}
+
+.logo {
+    height: 5rem;
+    width: 20rem;
+    background-image: url("../images/QRYomi_icons/QRYomi_logo.svg");
+}
