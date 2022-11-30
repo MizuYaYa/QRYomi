@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="a" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 128 128">
+  <defs>
+    <clipPath id="clippath">
+      <rect width="128" height="128" fill="none"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clippath)">
+    <g>
+      <path d="M0,10.4H0C0,4.6,4.6,0,10.4,0H117.7c2.8,0,5.4,1.1,7.3,3,1.9,1.9,3,4.6,3,7.3V117.6c0,5.7-4.6,10.4-10.4,10.4H10.4c-5.8,0-10.4-4.6-10.4-10.4V10.4Z" fill="#fff" fill-rule="evenodd"/>
+      <path d="M20.846,20.662H57.809l-7.947,7.947H28.424v21.438l-7.577,7.577V20.662h0Z" fill-rule="evenodd"/>
+      <path d="M109.926,106.414h-36.962l7.947-7.947h21.438v-21.438l7.577-7.577v36.962h0Z" fill-rule="evenodd"/>
+      <path d="M35.077,34.707h21.069v21.069h-21.069v-21.069Z" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="3.696"/>
+      <path d="M11.606,11.606H116.394V116.394H11.606V11.606Z" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.848"/>
+      <path d="M70.93,34.707h21.069v21.069h-21.069v-21.069Z" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="3.696"/>
+      <path d="M52.819,66.68h26.613v26.798h-26.613v-26.798Z" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="3.696"/>
+      <path d="M35.077,47.09h8.871v8.871h-8.871v-8.871Z" fill-rule="evenodd"/>
+      <path d="M72.409,45.796h8.871v8.871h-8.871v-8.871Z" fill-rule="evenodd"/>
+      <path d="M61.69,84.791h8.871v8.686h-8.871v-8.686Z" fill-rule="evenodd"/>
+      <path d="M52.819,84.791h8.871v8.686h-8.871v-8.686Z" fill-rule="evenodd"/>
+      <path d="M70.561,84.791h8.871v8.686h-8.871v-8.686Z" fill-rule="evenodd"/>
+      <path d="M20.662,106.414H57.624l-7.947-7.947H28.239v-21.438l-7.577-7.577v36.962h0Z" fill-rule="evenodd"/>
+      <path d="M109.926,21.216h-36.962l7.947,7.947h21.438v21.438l7.577,7.577V21.216h0Z" fill-rule="evenodd"/>
+    </g>
+  </g>
+</svg>
