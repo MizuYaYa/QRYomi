@@ -19,5 +19,9 @@
 		"48": "images/QRYomi_icons/QRYomi_icon_48.png",
 		"128": "images/QRYomi_icons/QRYomi_icon_128.png"
 	},
+	"options_ui": {
+		"page": "settings/settings.html",
+		"open_in_tab": false
+	},
 	"permissions": ["storage"]
 }
