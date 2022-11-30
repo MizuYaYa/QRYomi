@@ -8,6 +8,10 @@ html {
     font-size: 62.5%;
 }
 
+body {
+    font-size: 1.6rem;
+}
+
 header {
     display: flex;
     position: fixed;
@@ -70,4 +74,33 @@ main {
 }
 .setting input {
     margin: .5rem;
+}
+
+@media screen and (max-width:520px) {
+    .main {
+        display: block;
+        margin: 10rem auto 0;
+    }
+
+    .side_bar {
+        display: none;
+    }
+
+    .main_content {
+        grid-template-columns: 1fr;
+        margin: auto;
+    }
+}
+@media screen and (min-width:521px) and (max-width:960px) {
+    .main {
+        display: block;
+        margin: 10rem auto 0;
+    }
+    .main_content {
+        grid-template-columns: 1fr;
+        margin: auto auto auto 0;
+    }
+}
+@media screen and (min-width:961px) {
+    
 }
