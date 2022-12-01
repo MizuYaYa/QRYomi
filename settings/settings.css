@@ -2,6 +2,7 @@
     --main-text-color: #1A1A1C;
     --main-bg-color: white;
     --sub-color: #ccc;
+    --sumi-100: #F1F1F4;
 }
 
 html {
@@ -22,6 +23,7 @@ header {
     background-color: var(--main-bg-color);
     box-shadow: .3rem .4rem .5rem #cccccc80;
     padding: 1rem;
+    z-index: 100;
 }
 
 .logo {
@@ -35,7 +37,7 @@ header p {
 
 main {
     display: flex;
-    margin: 10rem 0 0 0;
+    margin: 10rem auto 0;
 }
 
 .side_bar {
@@ -54,15 +56,17 @@ main {
 
 .main_content {
     display: grid;
-    grid-template-columns:  1fr 1fr;
+    grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
     gap: 3rem;
+    flex: auto;
+    transition: all 1s;
 }
 
 .setting {
     border: .1rem solid var(--sub-color);
     border-radius: 1rem;
-    height: 22.8rem;
-    width: 22.8rem;
+    min-height: 22.8rem;
+    min-width: 22.8rem;
     padding: 1rem;
 }
 .setting h2 {
@@ -76,31 +80,25 @@ main {
     margin: .5rem;
 }
 
-@media screen and (max-width:520px) {
-    .main {
-        display: block;
-        margin: 10rem auto 0;
-    }
+footer {
+    display: none;
+    background-color: var(--sumi-100);
+    padding: 1rem;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    min-width: 23rem;
+}
 
+@media screen and (max-width:630px) {
     .side_bar {
         display: none;
     }
 
-    .main_content {
-        grid-template-columns: 1fr;
-        margin: auto;
+    footer {
+        display: block;
     }
 }
-@media screen and (min-width:521px) and (max-width:960px) {
-    .main {
-        display: block;
-        margin: 10rem auto 0;
-    }
-    .main_content {
-        grid-template-columns: 1fr;
-        margin: auto auto auto 0;
-    }
+@media screen and (min-width:631px) and (max-width:960px) {
 }
 @media screen and (min-width:961px) {
-    
 }
