@@ -52,6 +52,7 @@ main {
     border: .1rem solid var(--sub-color);
     border-radius: 1rem;
     padding: 1rem;
+    transition: all 1s;
 }
 
 .main_content {
