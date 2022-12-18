@@ -133,9 +133,9 @@ main {
 
 footer {
     display: none;
-    background-color: var(--sumi-100);
     padding: 1rem;
     margin: 1rem auto;
+    border: .1rem solid var(--sub-color);
     border-radius: 1rem;
     min-width: 23rem;
 }
@@ -148,8 +148,4 @@ footer {
     footer {
         display: block;
     }
-}
-@media screen and (min-width:631px) and (max-width:960px) {
-}
-@media screen and (min-width:961px) {
 }
