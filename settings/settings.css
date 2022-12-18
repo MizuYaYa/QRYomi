@@ -55,6 +55,14 @@ main {
     transition: all 1s;
 }
 
+.fund ul {
+    margin: 1.5rem auto;
+    padding: .5rem;
+    list-style-type: none;
+    border: .1rem solid var(--sub-color);
+    border-radius: 1rem;
+}
+
 .main_content {
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(25rem,1fr));
