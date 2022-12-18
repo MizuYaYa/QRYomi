@@ -55,6 +55,23 @@ main {
     transition: all 1s;
 }
 
+.side_bar_close_btn {
+    display: flex;
+    margin: .5rem .5rem .5rem auto;
+    padding: .4rem;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    transition: .3s;
+}
+.side_bar_close_btn:hover {
+    background-color: #cccccc80;
+    border-radius: 50%;
+}
+.side_bar_close_btn:active {
+    background-color: #cccccc;
+}
+
 .fund ul {
     margin: 1.5rem auto;
     padding: .5rem;
