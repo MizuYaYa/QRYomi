@@ -53,6 +53,7 @@ main {
     border-radius: 1rem;
     padding: 1rem;
     transition: all 1s;
+    box-shadow: .4rem .4rem .5rem #cccccc99;
 }
 
 .side_bar_close_btn {
