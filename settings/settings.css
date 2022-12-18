@@ -43,6 +43,7 @@ main {
 .side_bar {
     width: 30rem;
     margin-right: 5rem;
+    /*margin-left: -30rem;*/
 }
 
 .info {
@@ -70,6 +71,27 @@ main {
     border-radius: 50%;
 }
 .side_bar_close_btn:active {
+    background-color: #cccccc;
+}
+
+.side_bar_open_btn {
+    visibility: hidden;
+    display: flex;
+    margin: .5rem .5rem .5rem auto;
+    padding: .4rem;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    transition: .3s;
+    position: absolute;
+    top: 1.1rem;
+    left: 30.7rem;
+}
+.side_bar_open_btn:hover {
+    background-color: #cccccc80;
+    border-radius: 50%;
+}
+.side_bar_open_btn:active {
     background-color: #cccccc;
 }
 
