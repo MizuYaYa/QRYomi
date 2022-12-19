@@ -10,9 +10,8 @@ const copy_text = document.getElementById("copy_text");
 let QR;
 
 //カメラの権限を要求
-navigator.mediaDevices.getUserMedia(
-	{video: true}
-	).then(stream => {
+navigator.mediaDevices.getUserMedia({video: true})
+	.then(stream => {
 		//カメラの権限が取得できたらこっち
 		console.log("カメラへのアクセスが許可されました。\nCamera access granted.");
 		video.srcObject = stream;
@@ -21,7 +20,8 @@ navigator.mediaDevices.getUserMedia(
 		//QRを読み込む
 		cam_status.innerText = "カメラを起動中です・・・";
 		startQR();
-	}).catch(e => {
+	})
+	.catch(e => {
 		//カメラの権限が取得できなかったらこっち
 		console.log(`カメラへのアクセスがブロックされました。\nCamera access blocked.\n${e}`);
 		console.log("どうしようもありません。\nThere is nothing we can do about it.");
