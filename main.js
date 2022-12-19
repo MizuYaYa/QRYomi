@@ -26,7 +26,19 @@ navigator.mediaDevices.getUserMedia({video: true})
 		console.log(`カメラへのアクセスがブロックされました。\nCamera access blocked.\n${e}`);
 		console.log("どうしようもありません。\nThere is nothing we can do about it.");
 		cam_status.innerText = "カメラにアクセスできません";
-		window.open("./permissions.html");
+		navigator.permissions.query({name:'camera'}).then((result)=>{
+			console.log(result.state)
+			if (result.state == "prompt") {
+				cam_status.innerText = "権限取得のためページを開きます。";
+				setTimeout(() => {
+					window.open("./permissions.html");
+				}, 2000);
+			}else if (result.state == "denied") {
+				cam_status.innerText = "カメラの権限がありません。\nchrome側のサイトの設定からカメラの権限を許可してください。";
+			}else {
+				cam_status.innerText = `予期せぬエラーが発生した可能性があります。\n${e}`;
+			}
+		});
 	});
 
 function startQR() {
