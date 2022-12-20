@@ -31,7 +31,7 @@ navigator.mediaDevices.getUserMedia({video: true})
 			if (result.state == "prompt") {
 				cam_status.innerText = "権限取得のためページを開きます。";
 				setTimeout(() => {
-					window.open("./permissions.html");
+					window.open("../permissions.html");
 				}, 2000);
 			}else if (result.state == "denied") {
 				cam_status.innerText = "カメラの権限がありません。\nchrome側のサイトの設定からカメラの権限を許可してください。";
