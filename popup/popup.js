@@ -8,6 +8,7 @@ const cam_status = document.getElementById("cam_status");
 const copy_btn = document.getElementById("copy_btn");
 const copy_text = document.getElementById("copy_text");
 let QR;
+let QRData
 
 //カメラの権限を要求
 navigator.mediaDevices.getUserMedia({video: true})
@@ -114,8 +115,8 @@ scan_restart_btn.addEventListener("click", () => {
 });
 
 copy_btn.addEventListener("click", () => {
-	if(QR.data){
-		navigator.clipboard.writeText(QR.data);
+	if(scan_content.textContent != " "){
+		navigator.clipboard.writeText(scan_content.textContent);
 		console.log("コピーしました。\nCopied");
 		copy_text.innerText = "コピーしました。";
 		setTimeout(()=>{copy_text.innerText = "";}, 2000);
