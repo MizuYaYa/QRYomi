@@ -138,11 +138,3 @@ main button {
   vertical-align: middle;
   font-size: 20px;
 }
-
-body {
-  scrollbar-width: none; /*Firefox対応のスクロールバー非表示コード*/  
-}
-
-body::-webkit-scrollbar {  
-display: none; /*Google Chrome、Safari、Microsoft Edge対応のスクロールバー非表示コード*/
-}
