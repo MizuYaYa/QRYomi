@@ -95,12 +95,6 @@ main button {
   border-radius: 5px;
 }
 
-.border {
-  margin: 5px 2px 2px;
-  border: 1px solid whitesmoke;
-  border-radius: 10px;
-}
-
 .status_container {
   display: flex;
   justify-content: space-between;
