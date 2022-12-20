@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title>QRYomi - カメラ権限取得</title>
-        <link rel="icon" href="./QRYomi_icon_new.png">
+        <link rel="icon" href="images/QRYomi_icons/QRYomi_icon.svg">
     </head>
     <body>
         <h1 style="text-align: center; font-size: 40px; color: green; margin-top: 150px;">QRを読み込むためにカメラへのアクセスが必要です。<br>Access to the camera is required to read the QR.</h1>
         <div style="text-align: center;">
-            <img src="./images/click.png" alt="">
+            <img src="images/click.png" alt="">
         </div>
         <script>
             navigator.mediaDevices.getUserMedia({video: true}).then(() => {
@@ -20,7 +20,7 @@
 
 		        console.log(`カメラへのアクセスがブロックされました。\nCamera access blocked.\n${e}`);
 		        alert("カメラへのアクセスがブロックされました。\nchrome側のサイトの設定からカメラの権限を許可してください。")
-                
+
             });
         </script>
     </body>
