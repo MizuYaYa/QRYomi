@@ -127,7 +127,7 @@ main button {
   border-radius: 50%;
 }
 
-#copy_btn span {
+#copy_btn img {
   display: inline-flex;
   vertical-align: middle;
   font-size: 20px;
