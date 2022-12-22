@@ -4,7 +4,12 @@
   --sub-color: #ccc;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
+  font-size: 1.6rem;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
