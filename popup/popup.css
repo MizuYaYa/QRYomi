@@ -174,3 +174,7 @@ main button {
     border: 7px solid transparent;
     border-bottom: 7px solid #333;
 }
+.tooltip_desc-enabled {
+  opacity: 1;
+  visibility: visible;
+}
