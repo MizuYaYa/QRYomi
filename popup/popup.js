@@ -6,7 +6,7 @@ const link_btn = document.getElementById("link_btn");
 const scan_restart_btn = document.getElementById("scan_restart_btn");
 const cam_status = document.getElementById("cam_status");
 const copy_btn = document.getElementById("copy_btn");
-const copy_text = document.getElementById("copy_text");
+const copy_tooltip = document.getElementById("copy_tooltip");
 let QR;
 let QRData
 
@@ -118,8 +118,12 @@ copy_btn.addEventListener("click", () => {
 	if(scan_content.textContent != " "){
 		navigator.clipboard.writeText(scan_content.textContent);
 		console.log("コピーしました。\nCopied");
-		copy_text.innerText = "コピーしました。";
-		setTimeout(()=>{copy_text.innerText = "";}, 2000);
+		copy_tooltip.innerText = "コピーしました！";
+		copy_tooltip.classList.add("tooltip_desc-enabled");
+		setTimeout(()=>{
+			copy_tooltip.classList.remove("tooltip_desc-enabled");
+			copy_tooltip.innerText = "QRコードの内容をコピー";
+		}, 2000);
 	}
 });
 

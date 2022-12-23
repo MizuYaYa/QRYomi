@@ -116,10 +116,6 @@ main button {
   display: flex;
 }
 
-#copy_text {
-  margin: auto;
-}
-
 #copy_btn {
   cursor: pointer;
   border: none;
