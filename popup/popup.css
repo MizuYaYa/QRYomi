@@ -14,16 +14,6 @@ body {
   color: var(--main-text-color);
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px;
-}
-header span {
-  vertical-align: middle;
-  display: inline-flex;
-}
-
 #canvas {
   border: 2px solid var(--sub-color);
   width: 300px;
@@ -48,11 +38,6 @@ header span {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 2px 2px 2px #cccccccc;
-}
-
-main button {
-  text-align: right;
-  position: relative;
 }
 
 .link_btn {
