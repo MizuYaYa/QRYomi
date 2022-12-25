@@ -12,6 +12,7 @@
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 2px 2px 2px #cccccccc;
+  position: relative;
 }
 
 .link_btn {
