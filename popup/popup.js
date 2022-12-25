@@ -94,8 +94,6 @@ function urlOpen(QRData) {
 	}else if (RegExp("^http://").test(QRData)) {
 		console.log("httpのurlを検出しました。\nDetected http url.");
 		cam_status.innerText = "httpのリンクを検出しました。";
-		//一応念のためhttpのURLの際は警告を出す
-		setTimeout(()=>{alert("保護されていない通信:http")}, 300);
 		link_btn.setAttribute("href", QRData);
 		link_btn.classList.add("link_btn-enabled");
 
