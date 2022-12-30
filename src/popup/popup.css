@@ -23,6 +23,11 @@
   border-radius:7px;
   transition: all 0.2s ease;
   box-shadow: 2px 3px 3px var(--sub-color);
+  opacity: 0.5;
+}
+
+.link_btn-enabled {
+  opacity: 1;
 }
 .link_btn-enabled:hover {
   border: 1px solid gray;
