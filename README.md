@@ -3,9 +3,8 @@
 
 ![Twitter Follow](https://img.shields.io/twitter/follow/miraisan64?label=%40miraisan64&style=social)
 ![GitHub license](https://img.shields.io/github/license/nizya-mirai/QRYomi)
-<!-- ↓リリース後urlを再設定 -->
-![Chrome Web Store](https://img.shields.io/chrome-web-store/users/none?label=extension-users)
-![Chrome Web Store](https://img.shields.io/chrome-web-store/v/none)
+![Chrome Web Store](https://img.shields.io/chrome-web-store/users/nmanfahnbpmfhoddlchncnoemgoieogp)
+![Chrome Web Store](https://img.shields.io/chrome-web-store/v/nmanfahnbpmfhoddlchncnoemgoieogp)
 
 ## 概要
 **開いたらすぐ！**
@@ -39,8 +38,7 @@ QRコードをwebカメラで読み取ることができるChromeの拡張機能
 [QRYomiのプライバシーポリシー](https://nizya-mirai.github.io/QRYomi/PrivacyPolicy)を最初にお読みください
 
 ## インストール
-<!-- リリース後urlを再設定 -->
-[<img src="docs/img/Chrome_download.png" alt="Chrome Web Store link">](none)
+[<img src="docs/img/Chrome_download.png" alt="Chrome Web Store link">](https://chrome.google.com/webstore/detail/qryomi/nmanfahnbpmfhoddlchncnoemgoieogp)
 
 ## 使い方
 1. 上のボタンから Web Store に行ってChromeに追加する
