@@ -12,6 +12,12 @@ QRコードをwebカメラで読み取ることができるChromeの拡張機能
 
 読み方は「QRYomi(くるよみ)」ですよ！！！！
 
+## プライバシーポリシー
+[QRYomiのプライバシーポリシー](https://mizuyaya.github.io/QRYomi/PrivacyPolicy)を最初にお読みください
+
+## インストール
+[<img src="docs/img/Chrome_download.png" alt="Chrome Web Store link">](https://chrome.google.com/webstore/detail/qryomi/nmanfahnbpmfhoddlchncnoemgoieogp)
+
 ### 説明
 表示する画面はこれだけ！
 シンプルだから動作が軽いです。
@@ -35,12 +41,6 @@ QRコードをwebカメラで読み取ることができるChromeの拡張機能
 5. リンクを検出した際に直接アクセスするボタン
 6. 検出した際にもう一度検出する用のボタン
 ![popup](docs/img/popup_simple.png)
-
-## プライバシーポリシー
-[QRYomiのプライバシーポリシー](https://mizuyaya.github.io/QRYomi/PrivacyPolicy)を最初にお読みください
-
-## インストール
-[<img src="docs/img/Chrome_download.png" alt="Chrome Web Store link">](https://chrome.google.com/webstore/detail/qryomi/nmanfahnbpmfhoddlchncnoemgoieogp)
 
 ## 使い方
 1. 上のボタンから Web Store に行ってChromeに追加する
