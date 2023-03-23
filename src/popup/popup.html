@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
     <head>
         <meta charset="utf-8">
         <title>QRYomi</title>
@@ -11,20 +11,20 @@
         <main>
             <div class="cam_video">
                 <canvas id="canvas"></canvas>
-                <button class="btn" id="scan_restart_btn">カメラリスタート</button>
+                <button class="btn" id="scan_restart_btn"></button>
             </div>
             <div class="content_box">
                 <p id="scan_content"> </p>
                 <hr>
                 <div class="status_container">
-                    <p id="cam_status">カメラにアクセス中・・・</p>
+                    <p id="cam_status"></p>
                     <div class="copy tooltip">
                         <button id="copy_btn"><img src="../images/content_copy_FILL0_wght300_GRAD0_opsz20.svg" alt="copy_btn"></button>
-                        <span class="tooltip_desc" id="copy_tooltip">QRコードの内容をコピー</span>
+                        <span class="tooltip_desc" id="copy_tooltip"></span>
                     </div>
                 </div>
             </div>
-            <a class="link_btn btn" id="link_btn" target="_blank" rel=“noreferrer”>リンクにアクセスする</a>
+            <a class="link_btn btn" id="link_btn" target="_blank" rel=“noreferrer”></a>
         </main>
         <script src="popup.js"></script>
         <script src="../jsQR.js"></script>
