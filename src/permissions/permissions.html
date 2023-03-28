@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
     <head>
         <meta charset="utf-8">
-        <title>QRYomi - カメラ権限取得</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title></title>
         <link rel="icon" href="../images/QRYomi_icons/QRYomi_icon.svg">
+        <link rel="stylesheet" href="permissions.css">
     </head>
     <body>
-        <h1 style="text-align: center; font-size: 40px; color: green; margin-top: 150px;">QRコードを読み込むためにカメラへのアクセスが必要です。<br>Access to the camera is required to scan the QR code.</h1>
-        <div style="text-align: center;">
-            <img src="../images/click.png" alt="">
-        </div>
+        <h1 id="cam_permission_desc"></h1>
+        <div id="click_img"></div>
         <script src="permissions.js"></script>
     </body>
 </html>
