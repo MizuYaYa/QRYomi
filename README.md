@@ -6,6 +6,8 @@
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/users/nmanfahnbpmfhoddlchncnoemgoieogp)
 ![Chrome Web Store](https://img.shields.io/chrome-web-store/v/nmanfahnbpmfhoddlchncnoemgoieogp)
 
+[English README is here](./README-en.md)
+
 ## 概要
 **開いたらすぐ！**
 QRコードをwebカメラで読み取ることができるChromeの拡張機能です。

@@ -1,0 +1,17 @@
+#click_img {
+    background-image: url(../images/__MSG_@@ui_locale___click.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 222px;
+}
+
+
+h1 {
+    font-size: 40px;
+    color: green;
+    margin-top: 150px;
+}
+
+body {
+    text-align: center;
+}

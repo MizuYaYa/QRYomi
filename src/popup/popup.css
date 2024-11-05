@@ -14,6 +14,9 @@
   box-shadow: 2px 2px 2px #cccccccc;
   position: relative;
 }
+#scan_restart_btn::after {
+  content: "__MSG_popup_scan_restart_btn__";
+}
 
 .link_btn {
   width:220px;
@@ -24,6 +27,9 @@
   transition: all 0.2s ease;
   box-shadow: 2px 3px 3px var(--sub-color);
   opacity: 0.5;
+}
+#link_btn::after {
+  content: "__MSG_popup_link_btn__";
 }
 
 .link_btn-enabled {

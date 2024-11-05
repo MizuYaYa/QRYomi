@@ -12,7 +12,8 @@
         "default_title": "QRYomi",
         "default_popup": "popup/popup.html"
     },
-	"description": "QRコード読み取り拡張機能「QRYomi」",
+	"default_locale": "en",
+	"description": "__MSG_manifest_description__",
 	"icons": {
 		"16": "images/QRYomi_icons/QRYomi_icon_16.png",
 		"32": "images/QRYomi_icons/QRYomi_icon_32.png",

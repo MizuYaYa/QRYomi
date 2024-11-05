@@ -8,7 +8,19 @@ const cam_status = document.getElementById("cam_status");
 const copy_btn = document.getElementById("copy_btn");
 const copy_tooltip = document.getElementById("copy_tooltip");
 let QR;
-let QRData
+let QRData;
+
+//言語ファイルに格納されている文字列を取得
+function getMessage(msg) {
+	let getMsg = chrome.i18n.getMessage(msg);
+	console.log(`msg: "${msg}" \ngetMsg: "${getMsg}"`);
+	return getMsg;
+}
+
+//cam_statusに「カメラにアクセス中です・・・」を表示させる
+cam_status.innerText = getMessage("popup_cam_status_access_cam");
+//copy_tooltipに「QRコードの内容をコピー」を表示させる
+copy_tooltip.innerText = getMessage("popup_copy_tooltip_contents_copy");
 
 //カメラの権限を要求
 navigator.mediaDevices.getUserMedia({video: true})
@@ -18,26 +30,28 @@ navigator.mediaDevices.getUserMedia({video: true})
 		video.srcObject = stream;
 		video.play();
 		console.log("QRの読み込みを開始します。\nStart reading QR.");
-		//QRを読み込む
-		cam_status.innerText = "カメラを起動中です・・・";
+		//cam_statusに「カメラを起動中です・・・」を表示させる
+		cam_status.innerText = getMessage("popup_cam_status_launch_cam");
+		//QRコードの読み込み開始
 		startQR();
 	})
 	.catch(e => {
 		//カメラの権限が取得できなかったらこっち
 		console.log(`カメラへのアクセスがブロックされました。\nCamera access blocked.\n${e}`);
-		console.log("どうしようもありません。\nThere is nothing we can do about it.");
-		cam_status.innerText = "カメラにアクセスできません";
+		//cam_statusに「カメラにアクセスできません」を表示させる
+		cam_status.innerText = getMessage("popup_cam_status_can_not_access_cam");
+
 		navigator.permissions.query({name:'camera'}).then((result)=>{
 			console.log(result.state)
 			if (result.state == "prompt") {
-				cam_status.innerText = "権限取得のためページを開きます。";
+				cam_status.innerText = getMessage("popup_cam_status_permission_req");
 				setTimeout(() => {
 					window.open("../permissions/permissions.html");
 				}, 2000);
 			}else if (result.state == "denied") {
-				cam_status.innerText = "カメラの権限がありません。\nchrome側のサイトの設定からカメラの権限を許可してください。";
+				cam_status.innerText = getMessage("popup_cam_status_no_cam_permission");
 			}else {
-				cam_status.innerText = `予期せぬエラーが発生した可能性があります。\n${e}`;
+				cam_status.innerText = `${getMessage("popup_cam_status_unexpected_error")} \n${e}`;
 			}
 		});
 	});
@@ -71,7 +85,8 @@ function startQR() {
 			}
 			return;
 		}else{
-			cam_status.innerText = "検出中・・・";
+			//cam_statusに「検出中・・・」を表示させる
+			cam_status.innerText = getMessage("popup_cam_status_detecting");
 		}
 	}
 	setTimeout(startQR, 1);
@@ -85,7 +100,8 @@ function urlOpen(QRData) {
 	//httpsURLかhttpURLか文字列を正規表現で検出
 	if (RegExp("^https://").test(QRData)) {
 		console.log("httpsのurlを検出しました。\nDetected https url.");
-		cam_status.innerText = "リンクを検出しました。";
+		//cam_statusに「URLが検出されました」を表示させる
+		cam_status.innerText = getMessage("popup_cam_status_url_detected");
 		//リンクのボタンを検出したURLに置き換え
 		link_btn.setAttribute("href", QRData);
 		//リンクのボタンのアニメーションができるように
@@ -93,12 +109,14 @@ function urlOpen(QRData) {
 
 	}else if (RegExp("^http://").test(QRData)) {
 		console.log("httpのurlを検出しました。\nDetected http url.");
-		cam_status.innerText = "httpのリンクを検出しました。";
+		//cam_statusに「http URLが検出されました」を表示させる
+		cam_status.innerText = getMessage("popup_cam_status_http_url_detected");
 		link_btn.setAttribute("href", QRData);
 		link_btn.classList.add("link_btn-enabled");
 
 	}else {
-		cam_status.innerText = "テキストを検出しました。";
+		//cam_statusに「テキストが検出されました」を表示させる
+		cam_status.innerText = getMessage("popup_cam_status_text_detected");
 		console.log("URL以外の文字列を検出しました。\nDetected a string other than url.");
 	}
 }
@@ -116,11 +134,13 @@ copy_btn.addEventListener("click", () => {
 	if(scan_content.textContent != " "){
 		navigator.clipboard.writeText(scan_content.textContent);
 		console.log("コピーしました。\nCopied");
-		copy_tooltip.innerText = "コピーしました！";
+		////copy_tooltipに「コピーしました！」を表示させる
+		copy_tooltip.innerText = getMessage("popup_copy_tooltip_contents_copied");
 		copy_tooltip.classList.add("tooltip_desc-enabled");
 		setTimeout(()=>{
 			copy_tooltip.classList.remove("tooltip_desc-enabled");
-			copy_tooltip.innerText = "QRコードの内容をコピー";
+			//copy_tooltipに「QRコードの内容をコピー」を表示させる
+			copy_tooltip.innerText = getMessage("popup_copy_tooltip_contents_copy");
 		}, 2000);
 	}
 });
