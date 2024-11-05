@@ -1,0 +1,9 @@
+{
+  "name": "qryomi",
+  "version": "0.2.0",
+  "description": "QR code reader extension QRYomi",
+  "repository": "https://github.com/mizuyaya/QRYomi.git",
+  "author": "MizuYaYa <106097784+MizuYaYa@users.noreply.github.com>",
+  "license": "Apache-2.0",
+  "private": true
+}
