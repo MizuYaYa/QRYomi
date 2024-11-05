@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "QRYomi",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"action": {
 		"default_icon": {
 			"16": "images/QRYomi_icons/QRYomi_icon_16.png",
