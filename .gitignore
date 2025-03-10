@@ -172,3 +172,10 @@ sketch
 # .pnp.*
 
 # End of https://www.toptal.com/developers/gitignore/api/node,react,yarn
+
+# wxt
+.output
+stats.html
+stats-*.json
+.wxt
+web-ext.config.ts
