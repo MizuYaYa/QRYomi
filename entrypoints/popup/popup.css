@@ -19,11 +19,11 @@
 }
 
 .link_btn {
-  width:220px;
-  height:50px;
-  line-height:50px;
-  font-size:20px;
-  border-radius:7px;
+  width: 220px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 7px;
   transition: all 0.2s ease;
   box-shadow: 2px 3px 3px var(--sub-color);
   opacity: 0.5;

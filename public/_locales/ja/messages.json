@@ -1,62 +1,62 @@
 {
-    "manifest_description": {
-        "message": "QRコード読み取り拡張機能「QRYomi」"
-    },
-    "lang": {
-        "message": "ja"
-    },
-    "popup_scan_restart_btn": {
-        "message": "カメラリスタート"
-    },
-    "popup_copy_tooltip_contents_copy": {
-        "message": "QRコードの内容をコピー"
-    },
-    "popup_copy_tooltip_contents_copied": {
-        "message": "コピーしました！"
-    },
-    "popup_link_btn": {
-        "message": "リンクにアクセスする"
-    },
-    "popup_cam_status_access_cam": {
-        "message": "カメラにアクセス中・・・"
-    },
-    "popup_cam_status_launch_cam": {
-        "message": "カメラを起動中です・・・"
-    },
-    "popup_cam_status_can_not_access_cam": {
-        "message": "カメラにアクセスできません"
-    },
-    "popup_cam_status_permission_req": {
-        "message": "権限を取得するためページを開きます"
-    },
-    "popup_cam_status_no_cam_permission": {
-        "message": "カメラの権限がありません。\nchrome側のサイトの設定からカメラの権限を許可してください。"
-    },
-    "popup_cam_status_unexpected_error": {
-        "message": "予期せぬエラーが発生しました"
-    },
-    "popup_cam_status_detecting": {
-        "message": "検出中・・・"
-    },
-    "popup_cam_status_url_detected": {
-        "message": "URLが検出されました"
-    },
-    "popup_cam_status_http_url_detected": {
-        "message": "http URLが検出されました"
-    },
-    "popup_cam_status_text_detected": {
-        "message": "テキストが検出されました"
-    },
-    "permissions_title": {
-        "message": "QRYomi - カメラ権限取得"
-    },
-    "permissions_cam_access_permission": {
-        "message": "QRコードを読み込むには、カメラのアクセス許可が必要です。\n左上の「許可する」をクリックしてください。"
-    },
-    "permissions_cam_access_granted": {
-        "message": "カメラへのアクセスが許可されました! \nこのページを閉じてQRコードを読み込みましょう!"
-    },
-    "permissions_cam_access_blocked": {
-        "message": "カメラへのアクセスがブロックされました。\nchrome側のサイトの設定からカメラの権限を許可してください。"
-    }
+  "manifest_description": {
+    "message": "QRコード読み取り拡張機能「QRYomi」"
+  },
+  "lang": {
+    "message": "ja"
+  },
+  "popup_scan_restart_btn": {
+    "message": "カメラリスタート"
+  },
+  "popup_copy_tooltip_contents_copy": {
+    "message": "QRコードの内容をコピー"
+  },
+  "popup_copy_tooltip_contents_copied": {
+    "message": "コピーしました！"
+  },
+  "popup_link_btn": {
+    "message": "リンクにアクセスする"
+  },
+  "popup_cam_status_access_cam": {
+    "message": "カメラにアクセス中・・・"
+  },
+  "popup_cam_status_launch_cam": {
+    "message": "カメラを起動中です・・・"
+  },
+  "popup_cam_status_can_not_access_cam": {
+    "message": "カメラにアクセスできません"
+  },
+  "popup_cam_status_permission_req": {
+    "message": "権限を取得するためページを開きます"
+  },
+  "popup_cam_status_no_cam_permission": {
+    "message": "カメラの権限がありません。\nchrome側のサイトの設定からカメラの権限を許可してください。"
+  },
+  "popup_cam_status_unexpected_error": {
+    "message": "予期せぬエラーが発生しました"
+  },
+  "popup_cam_status_detecting": {
+    "message": "検出中・・・"
+  },
+  "popup_cam_status_url_detected": {
+    "message": "URLが検出されました"
+  },
+  "popup_cam_status_http_url_detected": {
+    "message": "http URLが検出されました"
+  },
+  "popup_cam_status_text_detected": {
+    "message": "テキストが検出されました"
+  },
+  "permissions_title": {
+    "message": "QRYomi - カメラ権限取得"
+  },
+  "permissions_cam_access_permission": {
+    "message": "QRコードを読み込むには、カメラのアクセス許可が必要です。\n左上の「許可する」をクリックしてください。"
+  },
+  "permissions_cam_access_granted": {
+    "message": "カメラへのアクセスが許可されました! \nこのページを閉じてQRコードを読み込みましょう!"
+  },
+  "permissions_cam_access_blocked": {
+    "message": "カメラへのアクセスがブロックされました。\nchrome側のサイトの設定からカメラの権限を許可してください。"
+  }
 }
