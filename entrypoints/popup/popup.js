@@ -46,7 +46,7 @@ navigator.mediaDevices.getUserMedia({video: true})
 			if (result.state == "prompt") {
 				cam_status.innerText = getMessage("popup_cam_status_permission_req");
 				setTimeout(() => {
-					window.open("../permissions/permissions.html");
+					window.open(browser.runtime.getURL("/permissions.html"));
 				}, 2000);
 			}else if (result.state == "denied") {
 				cam_status.innerText = getMessage("popup_cam_status_no_cam_permission");
