@@ -1,3 +1,5 @@
+import jsQR from "jsqr";
+
 const video = document.createElement("video");
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d", { willReadFrequently: true});
