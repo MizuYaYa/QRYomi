@@ -1,5 +1,5 @@
 <h1>
-  <img src="src/images/QRYomi_icons/QRYomi_logo.svg" alt="QRYomi logo" width="400px" >  
+  <img src="public/icons/logo.svg" alt="QRYomi logo" width="400px" >  
 
   QRYomi: QR code reader extension
 </h1>

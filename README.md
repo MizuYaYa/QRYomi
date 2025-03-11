@@ -1,4 +1,4 @@
-![QRYomi logo](src/images/QRYomi_icons/QRYomi_logo.svg)
+![QRYomi logo](public/icons/logo.svg)
 # QRYomi: QRコード読み取り拡張機能
 
 ![Twitter Follow](https://img.shields.io/twitter/follow/miraisan64?label=%40miraisan64&style=social)

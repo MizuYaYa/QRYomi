@@ -1,0 +1,136 @@
+header {
+  display: flex;
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  border: .2rem solid var(--sub-color);
+  border-radius: 1rem;
+  background-color: var(--main-bg-color);
+  box-shadow: .3rem .4rem .5rem #cccccc80;
+  padding: 1rem;
+  z-index: 100;
+}
+
+.logo {
+  height: 5rem;
+  width: 20rem;
+}
+
+header p {
+  margin: auto 0 0;
+}
+
+main {
+  display: flex;
+  margin: 10rem auto 0;
+}
+
+#sidebar {
+  width: 30rem;
+  margin-right: 5rem;
+}
+.sidebar_closed {
+  margin-left: -30rem;
+}
+
+.info {
+  position: sticky;
+  width: 27.8rem;
+  top: 10rem;
+  border: .1rem solid var(--sub-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: all 1s;
+  box-shadow: .4rem .4rem .5rem #cccccc99;
+}
+
+#sidebar_close_btn {
+  display: flex;
+  margin: .5rem .5rem .5rem auto;
+  padding: .4rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: .3s;
+}
+#sidebar_close_btn:hover {
+  background-color: #cccccc80;
+  border-radius: 50%;
+}
+#sidebar_close_btn:active {
+  background-color: #cccccc;
+}
+
+#sidebar_open_btn {
+  visibility: hidden;
+  display: flex;
+  margin: .5rem .5rem .5rem auto;
+  padding: .4rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  transition: .3s;
+  position: absolute;
+  top: 1.1rem;
+  left: 30.7rem;
+}
+#sidebar_open_btn:hover {
+  background-color: #cccccc80;
+  border-radius: 50%;
+}
+#sidebar_open_btn:active {
+  background-color: #cccccc;
+}
+
+.fund ul {
+  margin: 1.5rem auto;
+  padding: .5rem;
+  list-style-type: none;
+  border: .1rem solid var(--sub-color);
+  border-radius: 1rem;
+}
+
+.main_content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: 3rem;
+  flex: auto;
+  transition: all 1s;
+}
+
+.setting {
+  border: .1rem solid var(--sub-color);
+  border-radius: 1rem;
+  min-height: 22.8rem;
+  min-width: 22.8rem;
+  padding: 1rem;
+}
+.setting h2 {
+  font-size: 3rem;
+}
+.setting ul {
+  list-style-type: none;
+  font-size: 2rem;
+}
+.setting input {
+  margin: .5rem;
+}
+
+footer {
+  display: none;
+  padding: 1rem;
+  margin: 1rem auto;
+  border: .1rem solid var(--sub-color);
+  border-radius: 1rem;
+  min-width: 23rem;
+}
+
+@media screen and (max-width: 630px) {
+  #sidebar {
+    display: none;
+  }
+
+  footer {
+    display: block;
+  }
+}
