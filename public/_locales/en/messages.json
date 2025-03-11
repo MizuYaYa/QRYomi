@@ -2,6 +2,9 @@
     "manifest_description": {
         "message": "QR code reader extension 【QRYomi】"
     },
+    "lang": {
+        "message": "en"
+    },
     "popup_scan_restart_btn": {
         "message": "camera restart"
     },
